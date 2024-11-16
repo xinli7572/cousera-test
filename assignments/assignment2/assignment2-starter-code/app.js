@@ -16,7 +16,7 @@ function ToBuyController(ShoppingListCheckOffService) {
 
   buylist.buyItem = function(itemIndex){
     ShoppingListCheckOffService.buyItem(itemIndex);
-    if(ShoppingListCheckOffService.getBuyCount()==buylist.items.length){
+    if(buylist.items.length ==0 ){
       buylist.bought = 1;
     }
   }
@@ -32,33 +32,27 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
 
 function ShoppingListCheckOffService() {
   var service = this;
-  var buyCount = 0;
 
   // List of shopping items
   var items_buy = [{
     name: "Milk",
-    quantity: "2",
-    buy:"0"
+    quantity: "2"
   },
   {
     name: "Donuts",
-    quantity: "200",
-    buy:"0"
+    quantity: "200"
   },
   {
     name: "Cookies",
-    quantity: "300",
-    buy:"0"
+    quantity: "300"
   },
   {
     name: "Sugar",
-    quantity: "3",
-    buy:"0"
+    quantity: "3"
   },
   {
     name: "Chocolate",
-    quantity: "5",
-    buy:"0"
+    quantity: "5"
   }];
 
 
@@ -74,16 +68,9 @@ function ShoppingListCheckOffService() {
 
 
   service.buyItem= function (itemIndex){
-    if(items_buy[itemIndex].buy == "0"){
-      items_buy[itemIndex].buy = "1";
-      items_bought.push(items_buy[itemIndex]);
-      buyCount++;
-    }
+    items_bought.push(items_buy[itemIndex]);
+    items_buy.splice(itemIndex, 1);
   };
-
-  service.getBuyCount = function(){
-    return buyCount;
-  }
 
 }
 
