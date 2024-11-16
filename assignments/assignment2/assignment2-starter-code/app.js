@@ -15,10 +15,10 @@ function ToBuyController(ShoppingListCheckOffService) {
   buylist.items = ShoppingListCheckOffService.getItemsBuy();
 
   buylist.buyItem = function(itemIndex){
+    ShoppingListCheckOffService.buyItem(itemIndex);
     if(ShoppingListCheckOffService.getBuyCount()==buylist.items.length){
       buylist.bought = 1;
     }
-    ShoppingListCheckOffService.buyItem(itemIndex);
   }
 };
 
