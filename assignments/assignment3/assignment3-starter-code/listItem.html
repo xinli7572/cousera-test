@@ -1,0 +1,31 @@
+
+
+
+<div  ng-if="!listDirective.foundLength()">
+<h3>Menu length is :{{listDirective.title}}</h3>
+
+<ol>
+  <li ng-repeat="item in listDirective.items">
+    <div style="border-bottom: 1px solid #cccccc; margin-top:20px">
+      <span style="color:#2e6da4">name:</span>
+      <span>{{ item.name }}</span>
+      <span style="float:right">
+        <a href="#" style="color:blue" ng-click="listDirective.onRemove({index: $index});">Don't want this one</a>
+      </span>
+
+    </div>
+    <div>
+      <span style="color:#2e6da4">short_name: </span>
+      <span>{{ item.short_name }}</span>
+    </div>
+    <div>
+      <span style="color:#2e6da4">description: </span>
+      <span>{{ item.description }}</span>
+    </div>
+  </li>
+  <br>
+</ol>
+</div>
+<div class="error" ng-if="listDirective.searchTermResult()">
+    Nothing found
+</div>

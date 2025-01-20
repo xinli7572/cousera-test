@@ -10,6 +10,7 @@ angular.module('ShoppingListCheckOff',[])
 ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
   var buylist = this;
+  console.log("----",this);
 
   buylist.bought = 0;
   buylist.items = ShoppingListCheckOffService.getItemsBuy();
