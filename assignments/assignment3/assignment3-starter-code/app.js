@@ -95,6 +95,8 @@ function MenuSearchService($http, ApiBasePath) {
                  }
              }
          }
+console.log("--aa-",found);
+
        })
 
        .catch(function (error) {
@@ -102,7 +104,7 @@ function MenuSearchService($http, ApiBasePath) {
        });
     }
 
-
+console.log("--cc-",found);
     return found;
   };
 
