@@ -32,3 +32,31 @@ li[ui-sref] {
   padding-right: 5px;
   //margin-bottom: 2px;
 }
+
+      .container {
+          display: flex;
+          flex-direction: row; 
+          justify-content: space-between;
+          margin: 20px;
+      }
+
+   
+      .left-column {
+          width: 28%; 
+          background-color: #f4f4f4;
+          padding: 10px;
+          box-sizing: border-box;
+      }
+
+
+      .right-column {
+          width: 68%; 
+          background-color: #e0e0e0;
+          padding: 10px;
+          box-sizing: border-box;
+      }
+
+   
+      .column-content {
+          margin-bottom: 10px;
+      }
